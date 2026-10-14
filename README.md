@@ -9,14 +9,14 @@ An end-to-end SQL project on a hospital database: importing raw CSV files into M
 
 ## Dataset
 
-Four related tables (`data/` folder):
+Four related tables in the [`data/`](data/) folder:
 
 | Table | Rows | Description |
 |---|---|---|
-| `patients` | 4,530 | Demographics, city, province, allergies, height, weight |
-| `admissions` | 5,067 | Admission and discharge dates, diagnosis, attending doctor |
-| `doctors` | 27 | Doctor names and specialties |
-| `province_names` | 13 | Province code to full name lookup |
+| [`patients`](data/patients.csv) | 4,530 | Demographics, city, province, allergies, height, weight |
+| [`admissions`](data/admissions.csv) | 5,067 | Admission and discharge dates, diagnosis, attending doctor |
+| [`doctors`](data/doctors.csv) | 27 | Doctor names and specialties |
+| [`province_names`](data/province_names.csv) | 13 | Province code to full name lookup |
 
 **Relationships**
 
@@ -88,9 +88,9 @@ Queries are grouped below by the SQL concepts they practise.
    ```bash
    git clone https://github.com/jagdishsahukari/healthcare-sql-analysis.git
    ```
-2. Open `healthcare_analysis.sql` in MySQL Workbench.
+2. Open [`healthcare_analysis.sql`](healthcare_analysis.sql) in MySQL Workbench.
 3. Run Step 1 to create and select the `medical_db` database.
-4. Import the four CSV files from `data/` using **Table Data Import Wizard** (right-click the database, then *Table Data Import Wizard*). Keep the table names `patients`, `admissions`, `doctors` and `province_names`.
+4. Import the four CSV files from the [`data/`](data/) folder using **Table Data Import Wizard** (right-click the database, then *Table Data Import Wizard*). Keep the table names `patients`, `admissions`, `doctors` and `province_names`.
 5. Run the rest of the script in order, step by step. The validation steps come before the schema changes and key creation, so the order matters.
 
 > Note: the allergy `UPDATE` in question 5 may need Workbench safe update mode switched off (*Edit → Preferences → SQL Editor*).
@@ -102,6 +102,7 @@ Queries are grouped below by the SQL concepts they practise.
 ```
 healthcare-sql-analysis/
 ├── data/
+│   ├── README.md
 │   ├── patients.csv
 │   ├── admissions.csv
 │   ├── doctors.csv
@@ -109,6 +110,9 @@ healthcare-sql-analysis/
 ├── healthcare_analysis.sql
 └── README.md
 ```
+
+- [`healthcare_analysis.sql`](healthcare_analysis.sql): full script (setup, validation, cleaning, keys, 34 queries)
+- [`data/`](data/): the four source CSV files
 
 ---
 
